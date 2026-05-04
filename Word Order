@@ -1,0 +1,9 @@
+from collections import Counter 
+n = int(input())
+ls =[]
+for i in range(n):
+    row = str(input())
+    ls.append(row)
+cntr = Counter(ls)
+print(len(cntr))
+print(*cntr.values())
