@@ -1,0 +1,16 @@
+from collections import OrderedDict
+
+n = int(input())
+od = OrderedDict()
+
+for _ in range(n):
+    item = input().split()
+    item_name = ' '.join(item[:-1])
+    item_price = int(item[-1])
+    if item_name in od:
+        od[item_name] += item_price
+    else:
+        od[item_name] = item_price
+
+for item in od:
+    print(f'{item} {od[item]}')
