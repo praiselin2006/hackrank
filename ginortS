@@ -1,0 +1,20 @@
+S = input()
+
+if len(S)>0 and len(S)<1000:
+
+    # classify
+    only_lower = "".join(i for i in S if i.islower())
+    only_upper = "".join(i for i in S if i.isupper())
+    only_digit = "".join(i for i in S if i.isdigit())
+
+    # sort
+    sorted_lower = sorted(only_lower)
+    sorted_upper = sorted(only_upper)
+    sorted_digit = sorted(only_digit, key=lambda x: int(x)% 2 == 0)
+
+    merge = sorted_lower + sorted_upper + sorted_digit
+
+    A = "".join(merge)
+    print(A)
+else:
+    print("no solution")
