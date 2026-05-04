@@ -1,0 +1,8 @@
+A = set(map(int,input().split()))
+n = int(input())
+
+A_is_superset_for_all_sets = True
+for _ in range(n): 
+    B = set(map(int, input().split()))
+    A_is_superset_for_all_sets &= A.issuperset(B)
+print(A_is_superset_for_all_sets)
