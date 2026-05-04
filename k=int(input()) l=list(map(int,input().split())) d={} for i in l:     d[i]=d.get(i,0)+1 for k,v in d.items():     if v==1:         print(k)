@@ -1,0 +1,17 @@
+A_count = int(input())
+s = set(input().split())
+N_count = int(input())
+s1 = list()
+for i in range(N_count):
+    opt_name, _ = input().split()
+    other_set = set(input().split())
+    if opt_name == 'update':
+        s |= other_set
+    elif opt_name == 'intersection_update':
+        s &= other_set
+    elif opt_name == 'difference_update':
+        s -= other_set
+    elif opt_name == 'symmetric_difference_update':
+        s ^= other_set
+
+print(sum(map(int,s)))
