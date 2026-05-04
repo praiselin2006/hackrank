@@ -1,0 +1,19 @@
+for _ in range(int(input())):
+    n = int(input())
+    blocks = list(map(int,input().split()))
+    
+    while blocks:
+        l = len(blocks)
+        take = max(blocks[0], blocks[l-1])
+        if (blocks[0] == take and blocks[l-1] == take) or (take == blocks[l-1]):
+            blocks.pop(l-1)
+        elif take == blocks[0]:
+            blocks.pop(0)
+            
+        l -= 1
+        if not blocks:
+            print('Yes')
+        else:
+            if max(blocks[0], blocks[l-1]) > take:
+                print('No')
+                break
