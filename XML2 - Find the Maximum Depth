@@ -1,0 +1,7 @@
+
+
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    [depth(e,level+1) for e in elem]
+    maxdepth = max(maxdepth, level + 1)
