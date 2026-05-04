@@ -1,0 +1,28 @@
+import string
+
+def fun(s):
+    try:
+        username, website_extention = s.split("@")
+        website, extention = website_extention.split(".")
+    except ValueError:
+        return False
+    
+    # Fix: reject empty parts
+    if not username or not website or not extention:
+        return False
+
+    allowed_username = string.ascii_letters + string.digits + "_-"
+    allowed_website = string.ascii_letters + string.digits
+
+    for c in username:
+        if c not in allowed_username:
+            return False
+
+    for c in website:
+        if c not in allowed_website:
+            return False
+
+    if not extention.isalpha() or len(extention) > 3:
+        return False
+
+    return True
