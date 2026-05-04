@@ -1,0 +1,9 @@
+for i in range(int(input())):
+    int(input())
+    A = set(map(int,input().split()))
+    int(input())
+    B = set(map(int,input().split()))
+    if len(B) == len(A|B):
+        print("True")
+    else:
+        print("False")
