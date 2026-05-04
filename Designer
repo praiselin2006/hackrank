@@ -1,0 +1,19 @@
+inp = input().split()
+width = int(inp[1])
+height = int(inp[0])
+center = ".|."
+ub = height // 2        # Placement of Welcome Pattern
+cpl = len(center)       # Length of upper and bottom center pattern will take
+text = "WELCOME"
+
+for i in range(ub, 0, -1):
+    number_of_dashes = cpl * i
+    center_pattern = center * (( width - (number_of_dashes*2) )//cpl)
+    print("-" * number_of_dashes,center_pattern,"-" * number_of_dashes,sep="")
+    
+welcome_dash_num = (width - len(text))//2
+print("-"*welcome_dash_num,text,"-"*welcome_dash_num,sep="")
+for i in range(1, ub+1):
+    number_of_dashes = cpl * i
+    center_pattern = center * (( width - (number_of_dashes*2) )//cpl)
+    print("-" * number_of_dashes,center_pattern,"-" * number_of_dashes,sep="")
