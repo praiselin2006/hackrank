@@ -1,0 +1,9 @@
+import numpy as np
+n, m = map(int, input().split())
+ops = {'mean':1,'var':0,'std':None}
+myArray = np.array([list(map(int, input().split())) for _ in range(n)])
+for op, axis in ops.items():
+    res = getattr(np,op)(myArray,axis=axis)
+    if op == 'std':
+        res=round(res,11)
+    print(res)  
