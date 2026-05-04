@@ -1,0 +1,18 @@
+from collections import Counter
+
+X = int(input())
+Sizes = list(map(int, input().split()))
+Sizes = Counter(Sizes)
+N = int(input())
+
+totalEarnings = 0
+for i in range(N):
+    size,price = map(int, input().split()) 
+    
+    if size in Sizes.keys() and Sizes[size]>0:
+        Sizes[size] -= 1
+        totalEarnings += price
+    else: 
+        continue
+
+print(totalEarnings)
