@@ -1,0 +1,5 @@
+e = int(input())
+e_num = set(input().split())
+f = int(input())
+f_num = set(input().split())
+print(len(e_num & f_num))
