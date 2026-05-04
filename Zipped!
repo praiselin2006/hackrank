@@ -1,0 +1,4 @@
+n, nSubjects = map(int, input().split())
+subjects = [list(map(float, input().split())) for _ in range(nSubjects)]
+for grades in zip(*subjects):
+    print(f"{sum(grades)/nSubjects:.1f}")
