@@ -1,0 +1,19 @@
+n = int(input())
+s = set(map(int, input().split()))
+num_commands = int(input())
+for _ in range(num_commands):
+    command_parts = input().split()
+    command_name = command_parts[0]
+    if command_name == 'pop':
+        if s: 
+            s.pop()
+    elif command_name == 'remove':
+        if len(command_parts) > 1:
+            value = int(command_parts[1])
+            if value in s:
+                s.remove(value)
+    elif command_name == 'discard':
+        if len(command_parts) > 1:
+            value = int(command_parts[1])
+            s.discard(value)
+print(sum(s))
