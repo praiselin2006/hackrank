@@ -1,0 +1,8 @@
+from itertools import permutations
+S, k = input().split()
+ki = int(k)
+Sf = [i for i in S if i.isalpha() is True]
+Sf.sort()
+lp = list(permutations(Sf, ki))
+for p in lp:
+    print(''.join(p))
