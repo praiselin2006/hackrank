@@ -1,0 +1,14 @@
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    s = input()
+s = list(input())
+d = {i:s.count(i) for i in s}
+dSorted = sorted(d.items(), key = lambda x : (-x[1], x[0]))
