@@ -1,0 +1,43 @@
+S = input()
+k = input()
+
+ans = []
+end = 0
+
+while k in S[end:]:
+    start = S.find(k, end)
+    ans.append((start, start + len(k) - 1))
+    end = start + 1
+
+if not ans:
+    print((-1, -1))
+else:
+    for _ in ans:
+        print(_)
+
+# ------------------------
+# with re. search
+
+import re
+
+S = input()
+k = input()
+
+pattern = rf'{k}'
+
+end = 0
+ans = []
+while k in S[end:]:
+    m = re.search(pattern, S[end:])
+    start = m.start() + end
+    end = m.end() - 1 + end
+    ans.append((start, end))
+    
+    if len(k) == 1:
+        end += 1
+
+if not ans:
+    print((-1,-1))
+else:
+    for _ in ans:
+        print(_)
